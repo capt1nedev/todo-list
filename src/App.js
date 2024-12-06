@@ -87,9 +87,14 @@ const App = () => {
             <div className="task-info">
               <h2>{task.name}</h2>
               {task.time && (
-                <p>Completed at: {new Date(task.time).toLocaleString()}</p>
+                task.completed ? (
+                  <p>Completed at: {new Date(task.time).toLocaleString()}</p>
+                ) : (
+                  <p>Scheduled for: {new Date(task.time).toLocaleString()}</p>
+                )
               )}
             </div>
+
             <div className="task-actions">
               {!task.completed ? (
                 <button
