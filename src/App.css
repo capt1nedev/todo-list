@@ -1,0 +1,273 @@
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f7fc;
+  color: #333;
+}
+
+.app {
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: center;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 28px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.add-task-btn {
+  padding: 12px 18px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-task-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Task Item Styles */
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 15px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.task-item:hover {
+  transform: translateY(-5px);
+}
+
+.task-item.completed {
+  background: #d4edda;
+}
+
+/* Task Information Styling */
+.task-info {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.task-info h2 {
+  margin: 0;
+  color: #333;
+  font-size: 16px;
+}
+
+.task-info p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.task-info .task-time {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #888;
+}
+
+/* Task Actions (Mark, Unmark, Delete) Styling */
+.task-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.task-actions button {
+  padding: 8px 14px;
+  font-size: 14px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+/* Mark, Unmark, Delete Buttons */
+.mark-btn {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.unmark-btn {
+  background-color: #ffc107;
+  color: #fff;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.task-actions button:hover {
+  opacity: 0.8;
+}
+
+.task-actions .mark-btn:hover {
+  background-color: #218838;
+}
+
+.task-actions .unmark-btn:hover {
+  background-color: #e0a800;
+}
+
+.task-actions .delete-btn:hover {
+  background-color: #c82333;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal h2 {
+  margin-bottom: 20px;
+}
+
+.modal input {
+  width: calc(100% - 20px);
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.modal-buttons button {
+  margin: 10px 5px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.modal-buttons button:first-child {
+  background: #007bff;
+  color: #fff;
+}
+
+.modal-buttons button:last-child {
+  background: #ccc;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 600px) {
+  /* Adjust task container layout */
+  .task-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .task-info h2 {
+    font-size: 18px; /* Adjust task title font size */
+  }
+
+  .task-info p, .task-info .task-time {
+    font-size: 12px; /* Adjust description and time font sizes */
+  }
+
+  .task-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .task-actions button {
+    width: 100%; /* Make action buttons full-width on mobile */
+    padding: 10px;
+  }
+
+  .add-task-btn {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+
+  .modal {
+    width: 100%;
+    padding: 15px;
+  }
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 600px) {
+  /* Adjust task container layout */
+  .task-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .task-info h2 {
+    font-size: 18px; /* Adjust task title font size */
+  }
+
+  .task-info p, .task-info .task-time {
+    font-size: 12px; /* Adjust description and time font sizes */
+  }
+
+  /* Keep buttons inline in mobile view */
+  .task-actions {
+    display: flex;
+    gap: 10px;
+    flex-direction: row; /* Ensures buttons are inline */
+    width: 100%;
+  }
+
+  .task-actions button {
+    width: auto; /* Set button width to auto so they don't stretch */
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  .add-task-btn {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+
+  .modal {
+    width: 100%;
+    padding: 15px;
+  }
+}
+
